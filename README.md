@@ -3,7 +3,7 @@
 A basic HTML live interpreter where user can write the code in the **given section** and the preview section will **preview** the code written in the given area.
 
 ### Preview of Website:
-![Website Preview]()
+![Website Preview](https://raw.githubusercontent.com/alokik98/html-live-interpreter/main/preview.png)
 
 #### Technologies Used
 1. HTML
@@ -17,4 +17,10 @@ A basic HTML live interpreter where user can write the code in the **given secti
 git clone https://github.com/alokik98/html-live-interpreter.git
 ```
 2. Go inside the cloned repository.
-3. Open the index.html page in code editor for making changes.
+```
+cd html-live-interpreter
+```
+3. Open the index.html page in code editor (of your choice) for making changes.
+```
+notepad index.html
+```
