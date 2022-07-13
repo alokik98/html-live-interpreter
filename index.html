@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>HTML Live Interpreter</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                overflow-x: hidden;
+            }
+
+            .code__area {
+                display: flex;
+                width: 100%;
+                height: 50vh;
+            }
+
+            .code__area textarea {
+                resize: none;
+                outline: 0;
+                width: 100%;
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            #htmlCode {
+                background-color: antiquewhite;
+                color: rgb(169, 61, 31);
+            }
+
+            #cssCode {
+                background-color: azure;
+                color: rgb(36, 140, 77);
+            }
+
+            #jsCode {
+                background-color: beige;
+                color: rgb(85, 30, 30);
+            }
+
+            .display {
+                width: 100%;
+                height: 45vh;
+            }
+
+            .display h3 {
+                font-size: 2rem;
+                padding-left: 0.5rem;
+                background-color: darkgray;
+                color: blanchedalmond;
+            }
+
+            .display iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="code__area">
+            <textarea id="htmlCode" cols="30" rows="10" placeholder="Enter HTML code here ..." oninput="showPreview()"></textarea>
+            <textarea id="cssCode" cols="30" rows="10" placeholder="Enter CSS code here ..." oninput="showPreview()"></textarea>
+            <textarea id="jsCode" cols="30" rows="10" placeholder="Enter JS code here ..." oninput="showPreview()"></textarea>
+        </div>
+        <div class="display">
+            <h3>Preview :</h3>
+            <iframe id="preview__area"></iframe>
+        </div>
+        <script>
+            function showPreview(){
+                var htmlCode = document.getElementById('htmlCode').value;
+                var cssCode = "<style>" + document.getElementById('cssCode').value + "</style>";
+                var jsCode = "<script>" + document.getElementById('jsCode').value + "</scri" +"pt>";
+
+                var frame = document.getElementById('preview__area').contentWindow.document;
+
+                frame.open();
+                frame.write(htmlCode+cssCode+jsCode);
+                frame.close();
+            }
+        </script>
+    </body>
+</html>
